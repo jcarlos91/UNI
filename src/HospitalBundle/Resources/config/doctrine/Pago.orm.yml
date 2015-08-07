@@ -1,0 +1,19 @@
+HospitalBundle\Entity\Pago:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idFactura:
+            type: integer
+        idFormatoDePago:
+            type: integer
+        fechaDePago:
+            type: integer
+        valor:
+            type: decimal
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+HospitalBundle\Entity\Paciente:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idPersona:
+            type: integer
+        idHistoriaClinica:
+            type: integer
+    lifecycleCallbacks: {  }

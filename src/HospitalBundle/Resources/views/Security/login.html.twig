@@ -1,0 +1,26 @@
+{#src/HospitalBundle/Resources/views/Security/login.html.twig#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+</head>
+<body>
+	<section>
+		<h1>Inicio de Sesion</h1>
+		<form action="{{path('login_check')}}" method="POST">
+			<label for="username">Username: </label>
+			<input type="text" id="username" name="_username" value="{{ last_username}}">
+			
+			<label for="password">Password: </label>
+			<input type="password" id="password" name="_password">
+			
+			<button type="submit">login</button>
+			<input type="hidden" name="_target_path" value="/index">
+			{% if error %}
+				<div>{{ error.message}}</div>
+			{% endif %}
+		</form>
+	</section>
+</body>
+</html>

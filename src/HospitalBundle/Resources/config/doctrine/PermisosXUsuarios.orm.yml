@@ -1,0 +1,15 @@
+HospitalBundle\Entity\PermisosXUsuarios:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idUsuario:
+            type: integer
+        idPermiso:
+            type: integer
+    lifecycleCallbacks: {  }

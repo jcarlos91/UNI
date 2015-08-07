@@ -1,0 +1,24 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+
+{% block contenido %}
+	<article>
+		<h1>Listado de Cargos</h1>
+		<table class="header">
+			<tr><th>ID</th>
+				<th>Nombre</th>
+				<th>Descripción</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+			{% for cargos in cargos %}
+				<tr>
+					<td><a href="{{url('hospital_cargo_detalle',{'id':cargos.id})}}">{{cargos.id}} </a></td>
+					<td><a href="{{url('hospital_cargo_detalle',{'id':cargos.id})}}">{{cargos.nombre}}</a></td>
+					<td><a href="{{url('hospital_cargo_editar',{'id':cargos.id})}}">Editar</a></td>
+					<td><a href="{{url('hospital_cargo_elimar',{'id':cargos.id})}}">Eliminar</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<input type="submit" value="Nuevo" onclick="window.location='{{path('hospital_cargo_nuevo')}}'">
+	</article>
+{% endblock %}

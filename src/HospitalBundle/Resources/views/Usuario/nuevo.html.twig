@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuevo</title>
+</head>
+<body>
+	<section>
+		{{ form_start(form, {'action': path('hospital_usuario_nuevo'), 'method': 'POST'}) }}
+		{{ form_errors(form) }}
+		<article>
+			{{form_label(form.username)}}
+			{{form_errors(form.username)}}
+			{{form_widget(form.username)}}
+		</article>
+		<article>
+			{{form_label(form.salt)}}
+			{{form_errors(form.salt)}}
+			{{form_widget(form.salt)}}
+		</article>
+		<article>
+			{{form_label(form.password)}}
+			{{form_errors(form.password)}}
+			{{form_widget(form.password)}}
+		</article>
+		<article>
+			{{form_label(form.email)}}
+			{{form_errors(form.email)}}
+			{{form_widget(form.email)}}
+		</article>
+		<article>
+			{{form_label(form.isActive)}}
+			{{form_errors(form.isActive)}}
+			{{form_widget(form.isActive)}}
+		</article>
+		<article>
+			<input type="submit">
+		</article>
+		{{ form_row(form._token) }}
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+	</section>
+</body>
+</html>

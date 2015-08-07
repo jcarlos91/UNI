@@ -1,0 +1,26 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+
+{% block contenido %}
+	<article>
+		<h1>Listado de Formas de Pago</h1>
+		<table class="header" boder="1">
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Descripción</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+			{% for formasPago in formasPago %}
+				<tr>
+					<td><a href="{{url('hospital_formas_pago_detalle',{'id':formasPago.id})}}">{{formasPago.id}} </a></td>
+					<td><a href="{{url('hospital_formas_pago_detalle',{'id':formasPago.id})}}">{{formasPago.nombre}}</a></td>
+					<td><a href="{{url('hospital_formas_pago_detalle',{'id':formasPago.id})}}">{{formasPago.descripcion}}</a></td>
+					<td><a href="{{url('hospital_formas_pago_editar',{'id':formasPago.id})}}">Editar</a></td>
+					<td><a href="{{url('hospital_formas_pago_eliminar',{'id':formasPago.id})}}">Eliminar</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<input type="submit" value="Nuevo" onclick="window.location='{{path('hospital_formas_pago_nuevo')}}'">
+	</article>
+{% endblock %}

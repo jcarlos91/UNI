@@ -1,0 +1,22 @@
+HospitalBundle\Entity\Examen:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idHistorialClinica:
+            type: integer
+        fechaSolicitud:
+            type: datetime
+        fechaAplicacion:
+            type: datetime
+        observaciones:
+            type: string
+            length: '45'
+        idTipoExamen:
+            type: integer
+    lifecycleCallbacks: {  }

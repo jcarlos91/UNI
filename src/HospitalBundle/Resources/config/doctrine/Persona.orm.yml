@@ -1,0 +1,28 @@
+HospitalBundle\Entity\Persona:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cedula:
+            type: string
+            length: '12'
+        nombre:
+            type: string
+            length: '45'
+        apellidos:
+            type: string
+            length: '45'
+        fechaNacimiento:
+            type: date
+        telefono:
+            type: string
+            length: '45'
+        direccion:
+            type: string
+            length: '45'
+    lifecycleCallbacks: {  }

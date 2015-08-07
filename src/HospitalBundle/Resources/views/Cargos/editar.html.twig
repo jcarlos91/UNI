@@ -1,0 +1,25 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+{% block title %}Detalle del {{cargo.nombre}}{% endblock %}
+{% block contenido %}
+<h1>Editar Cargo {{cargo.nombre}} </h1>
+	{{ form_start(form)}}
+	{{ form_errors(form) }}
+		<div id="al">
+			<article>
+			{{ form_label(form.nombre)}}
+			{{ form_errors(form.nombre)}}
+			{{ form_widget(form.nombre)}}
+		</article>
+		<article>
+			{{ form_label(form.descripcion)}}
+			{{ form_errors(form.descripcion)}}
+			{{ form_widget(form.descripcion)}}
+		</article>
+		<article>
+			<input type="submit" value="Guardar">
+		</article>
+		</div>
+	{{ form_row(form._token) }}
+	{{ form_rest(form) }}
+	{{ form_end(form) }}	
+{% endblock %}

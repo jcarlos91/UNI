@@ -1,0 +1,9 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+{% block contenido %}
+<h1>Detalles de {{tipoTratamiento.nombre}} </h1>
+		<div id="al">
+			<label>Nombre: </label> <label>{{tipoTratamiento.nombre}}</label><br>
+			<label>Descripción: </label> <label>{{tipoTratamiento.descripcion}}</label><br>
+		</div>
+		<input type="submit" value="Regresar" onclick="window.location='{{path('hospital_TipoTratamiento_tipos')}}'">
+{% endblock %}

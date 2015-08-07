@@ -1,0 +1,24 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+
+{% block contenido %}
+	<section>
+		<h1>Alta de Tipos De Empleado</h1>
+		{{ form_start(form, {'action': path('hospital_tipoEmpleado_nuevo'), 'method': 'POST'}) }}
+		{{ form_errors(form) }}
+		<article>
+			{{form_label(form.nombre)}}
+			{{form_errors(form.nombre)}}
+			{{form_widget(form.nombre)}}
+		</article>
+		<article>
+			{{form_label(form.descripcion)}}
+			{{form_errors(form.descripcion)}}
+			{{form_widget(form.descripcion)}}
+		</article>
+			<input type="submit">
+		</article>
+		{{ form_row(form._token) }}
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+	</section>
+{% endblock %}

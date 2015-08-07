@@ -1,0 +1,25 @@
+HospitalBundle\Entity\Usuario:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: '32'
+        salt:
+            type: string
+            length: '32'
+        password:
+            type: string
+            length: '40'
+        email:
+            type: string
+            length: '60'
+        isActive:
+            type: boolean
+    lifecycleCallbacks: {  }

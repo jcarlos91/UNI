@@ -1,0 +1,20 @@
+HospitalBundle\Entity\Resultado:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idExamen:
+            type: integer
+        fechaEntrega:
+            type: datetime
+        descripcion:
+            type: string
+            length: '45'
+        documentacionAsociado:
+            type: integer
+    lifecycleCallbacks: {  }

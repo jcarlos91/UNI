@@ -1,0 +1,20 @@
+HospitalBundle\Entity\Cuenta:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idFactura:
+            type: integer
+        fechaGeneracion:
+            type: datetime
+        descripcion:
+            type: string
+            length: '45'
+        valor:
+            type: decimal
+    lifecycleCallbacks: {  }

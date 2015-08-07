@@ -1,0 +1,24 @@
+HospitalBundle\Entity\Tratamiento:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idHistoriaClinica:
+            type: integer
+        idTipoTratamiento:
+            type: integer
+        fechaSolicitud:
+            type: datetime
+        fechaInicio:
+            type: datetime
+        fechaFinalizacion:
+            type: datetime
+        observaciones:
+            type: string
+            length: '45'
+    lifecycleCallbacks: {  }

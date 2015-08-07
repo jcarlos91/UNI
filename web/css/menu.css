@@ -1,0 +1,4 @@
+#menu{margin:0;padding:0;float:left;list-style:none;}
+#menu li{position:relative;padding:3px 8px;margin:0 1px;}
+#menu ul{display:none;}
+#menu li:hover ul,#menu li ul:hover{display:block;position:absolute;list-style:none;}

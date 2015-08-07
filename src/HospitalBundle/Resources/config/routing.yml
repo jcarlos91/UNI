@@ -1,0 +1,82 @@
+#login
+login:
+    path:     /login
+    defaults: { _controller: HospitalBundle:Security:login }
+login_check:
+    path:     /login_check
+
+hospital_homepage:
+    path:     /index
+    defaults: { _controller: HospitalBundle:Default:index }
+#Usuario
+hospital_usuario_nuevo:
+    path:     /usuario/nuevo
+    defaults: { _controller: HospitalBundle:User:nuevo }
+#Catalogos
+hospital_cargo:
+    path:    /cargos
+    defaults: { _controller: HospitalBundle:Cargo:cargos }
+hospital_cargo_nuevo:
+    path:    /cargo/nuevo
+    defaults: { _controller: HospitalBundle:Cargo:nuevo }
+hospital_cargo_editar:
+    path:    /cargo/{id}/editar
+    defaults: { _controller: HospitalBundle:Cargo:editar }
+hospital_cargo_eliminar:
+    path:    /cargo/{id}/eliminar
+    defaults: { _controller: HospitalBundle:Cargo:eliminar }
+hospital_cargo_detalle:
+    path:    /cargo/{id}/detalle
+    defaults: { _controller: HospitalBundle:Cargo:detalle }
+#Tipo Empleados
+hospital_tipoEmpleado_tipos:
+    path:    /tipo/empleados
+    defaults: { _controller: HospitalBundle:Empleado:tipos }
+hospital_tipoEmpleado_nuevo:
+    path:    /tipo/empleado/nuevo
+    defaults: { _controller: HospitalBundle:Empleado:nuevo}
+hospital_tipoEmpleado_editar:
+    path:    /tipo/empleado/{id}/editar
+    defaults: { _controller: HospitalBundle:Empleado:editar }
+hospital_TipoEmpleado_detalle:
+    path:    /tipo/empleado/{id}/detalle
+    defaults: { _controller: HospitalBundle:Empleado:detalle }
+hospital_tipoEmpleado_borrar:
+    path:    /tipo/empleado/{id}/eliminar
+    defaults: { _controller: HospitalBundle:Empleado:eliminar }
+#tipo de tratamientos
+hospital_TipoTratamiento_nuevo:
+    path:    /tipo/tratamiento/nuevo
+    defaults: { _controller: HospitalBundle:Tratamiento:nuevo }
+hospital_TipoTratamiento_tipos:
+    path:    /tipo/tratamiento
+    defaults: { _controller: HospitalBundle:Tratamiento:tipos }
+hospital_TipoTratamiento_editar:
+    path:    /tipo/tratamiento/{id}/editar
+    defaults: { _controller: HospitalBundle:Tratamiento:editar }
+hospital_tipoTratamiento_detalle:
+    path:    /tipo/tratamiento/{id}/detalle
+    defaults: { _controller: HospitalBundle:Tratamiento:ddetalle }
+hospital_tipoTratamiento_eliminar:
+    path:    /tipo/tratamiento/{id}/eliminar
+    defaults: { _controller: HospitalBundle:Tratamiento:eliminar }
+#Formas de pago
+hospital_formas_pago:
+    path:    /formas/pago
+    defaults: { _controller: HospitalBundle:FormasPago:formas }
+hospital_formas_pago_detalle:
+    path:    /formas/pago/{id}/detalle
+    defaults: { _controller: HospitalBundle:FormasPago:detalle }
+hospital_formas_pago_nuevo:
+    path:    /formas/pago/nuevo
+    defaults: { _controller: HospitalBundle:FormasPago:nuevo }
+hospital_formas_pago_editar:
+    path:    /formas/pago/{id}/editar
+    defaults: { _controller: HospitalBundle:FormasPago:editar }
+hospital_formas_pago_eliminar:
+    path:    /formas/pago/{id}/eliminar
+    defaults: { _controller: HospitalBundle:FormasPago:eliminar }
+#Personas
+hospital_paciente_nuevo:
+    path:     /paciente/nuevo
+    defaults: { _controller: HospitalBundle:Paciente:nuevo }

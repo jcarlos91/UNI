@@ -1,0 +1,24 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+
+{% block contenido %}
+	<article>
+		<h1>Listado de Tratamientos</h1>
+		<table class="header" boder="1">
+			<tr><th>Nombre</th>
+				<th>Descripción</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+			{% for tipoTratamiento in tipoTratamiento %}
+				<tr>
+					<td><a href="{{url('hospital_tipoTratamiento_detalle',{'id':tipoTratamiento.id})}}">{{tipoEmpleado.id}} </a></td>
+					<td><a href="{{url('hospital_tipoTratamiento_detalle',{'id':tipoTratamiento.id})}}">{{tipoEmpleado.nombre}}</a></td>
+					<td><a href="{{url('hospital_tipoTratamiento_detalle',{'id':tipoTratamiento.id})}}">{{tipoEmpleado.descripcion}}</a></td>
+					<td><a href="{{url('hospital_TipoTratamiento_editar',{'id':tipoTratamiento.id})}}">Editar</a></td>
+					<td><a href="{{url('hospital_tipoTratamiento_eliminar',{'id':tipoTratamiento.id})}}">Eliminar</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<input type="submit" value="Nuevo" onclick="window.location='{{path('hospital_TipoTratamiento_nuevo')}}'">
+	</article>
+{% endblock %}

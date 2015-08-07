@@ -1,0 +1,26 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+
+{% block contenido %}
+	<article>
+		<h1>Listado de Tipos de Empleados</h1>
+		<table class="header" boder="1">
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Descripción</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+			{% for tipoEmpleado in tipoEmpleado %}
+				<tr>
+					<td><a href="{{url('hospital_TipoEmpleado_detalle',{'id':tipoEmpleado.id})}}">{{tipoEmpleado.id}} </a></td>
+					<td><a href="{{url('hospital_TipoEmpleado_detalle',{'id':tipoEmpleado.id})}}">{{tipoEmpleado.nombre}}</a></td>
+					<td><a href="{{url('hospital_TipoEmpleado_detalle',{'id':tipoEmpleado.id})}}">{{tipoEmpleado.descripcion}}</a></td>
+					<td><a href="{{url('hospital_tipoEmpleado_editar',{'id':tipoEmpleado.id})}}">Editar</a></td>
+					<td><a href="{{url('hospital_tipoEmpleado_borrar',{'id':tipoEmpleado.id})}}">Eliminar</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<input type="submit" value="Nuevo" onclick="window.location='{{path('hospital_tipoEmpleado_nuevo')}}'">
+	</article>
+{% endblock %}
