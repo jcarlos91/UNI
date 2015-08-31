@@ -16,7 +16,7 @@ class CargoType extends AbstractType
     {
         $builder
             ->add('nombre'.'text',array('max_length'=>45))
-            ->add('descripcion','text',array('max_length'=>45w))
+            ->add('descripcion','text',array('max_length'=>45))
         ;
     }
     
