@@ -27,6 +27,8 @@ class Usuario implements UserInterface, \Serializable
 
     /**
      * @var string
+     * 
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
 
@@ -197,4 +199,10 @@ class Usuario implements UserInterface, \Serializable
             $this->id
         ) = unserialize($serialized);
     }
+    
+    public function __construct(){ 
+        $this->isActive = true; 
+        $this->salt = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36); 
+    }
+
 }

@@ -23,10 +23,6 @@ class UsuarioType extends AbstractType
             ->add('email','email',array(
                   'required' => true)
                 )
-            ->add('salt','password',array(
-                  'required' => true,
-                  'max_length'=>8)
-                )
             ->add('isActive','choice', [
                 'choices'=>[
                     '1'=>'Sí',

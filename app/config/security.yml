@@ -2,10 +2,19 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
-    encoders:
-        Symfony\Component\Security\Core\User\User: sha512
-        HospitalBundle\Entity\Usuario: sha512
+    #encoders:
+        #Symfony\Component\Security\Core\User\User: sha512
+        #HospitalBundle\Entity\Usuario: sha512
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
+    encoders:
+        HospitalBundle\Entity\Usuario:
+            algorithm:   sha1
+            iterations: 1
+            encode_as_base64: false
+        Symfony\Component\Security\Core\User\User:
+            algorithm:   sha1
+            iterations: 1
+            encode_as_base64: false
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
@@ -18,8 +27,9 @@ security:
         in_memory:
             memory:
                 users:
-                    ryan:  { password: bb87a29949f3a1ee0559f8a57357487151281386, roles: 'ROLE_USER' }
                     admin: { password: 74913f5cd5f61ec0bcfdb775414c2fb3d161b620, roles: 'ROLE_ADMIN' }
+                    juan: {password: a86880675794c798f639d180801915e6963609ae, roles: 'ROLE_ADMIN' }
+                    
         user_db:
             entity: { class: HospitalBundle:Usuario, property: username}
 

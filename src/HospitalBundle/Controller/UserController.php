@@ -20,10 +20,10 @@ class UserController extends Controller{
     	if($form->isValid() && $form->isSubmitted()){
     		try {
     			$factory = $this->get('security.encoder_factory');
-				$encoder = $factory->getEncoder($usuario);
-				$password = $encoder->encodePassword($request, $usuario->getSalt());
-				$usuario->setPassword($password);
-				$this->getDoctrine()->getManager()->persist($usuario);
+                        $encoder = $factory->getEncoder($usuario);
+                        $password = $encoder->encodePassword($request, $usuario->getSalt());
+                        $usuario->setPassword($password);
+                        $this->getDoctrine()->getManager()->persist($usuario);
     			$this->getDoctrine()->getManager()->flush();
     			return $this->redirect($this->generateURL('hospital_usuario_nuevo'));
     		} catch (\Exception $e) {
