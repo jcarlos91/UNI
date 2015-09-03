@@ -1,33 +1,39 @@
 {% extends 'HospitalBundle::main.html.twig'%}
 
+{% block title %}Inicio{% endblock %}
 {% block contenido %}
 <div id="header">
-        <ul class="nav">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Servicios</a>
-                        <ul>
-                                <li><a href="">Submenu1</a></li>
-                                <li><a href="">Submenu2</a></li>
-                                <li><a href="">Submenu3</a></li>
-                                <li><a href="">Submenu4</a>
-                                        <ul>
-                                                <li><a href="">Submenu1</a></li>
-                                                <li><a href="">Submenu2</a></li>
-                                                <li><a href="">Submenu3</a></li>
-                                                <li><a href="">Submenu4</a></li>
-                                        </ul>
-                                </li>
-                        </ul>
-                </li>
-                <li><a href="">Acerca de</a>
-                        <ul>
-                                <li><a href="">Submenu1</a></li>
-                                <li><a href="">Submenu2</a></li>
-                                <li><a href="">Submenu3</a></li>
-                                <li><a href="">Submenu4</a></li>
-                        </ul>
-                </li>
-                <li><a href="">Contacto</a></li>
-        </ul>
+    <ul class="nav">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Pacientes</a>
+                    <ul>
+                            <li><a href="">Alta</a></li>
+                            <!--li><a href="">Submenu2</a></li>
+                            <li><a href="">Submenu3</a></li>
+                            <li><a href="">Submenu4</a>
+                                    <ul>
+                                            <li><a href="">Submenu1</a></li>
+                                            <li><a href="">Submenu2</a></li>
+                                            <li><a href="">Submenu3</a></li>
+                                            <li><a href="">Submenu4</a></li>
+                                    </ul>
+                            </li-->
+                    </ul>
+            </li>
+            <li><a href="">Empleados</a>
+                <ul>
+                    <li><a href="">Nuevo</a></li>
+                </ul>
+            </li>
+            <li><a href="">Catalogos</a>
+                    <ul>
+                            <li><a href="{{url('hospital_cargo')}}">Cargos</a></li>
+                            <li><a href="{{url('hospital_tipoEmpleado_tipos')}}">Tipo Empleado</a></li>
+                            <li><a href="{{url('hospital_formas_pago')}}">Formas de Pago</a></li>
+                            <li><a href="{{url('hospital_TipoTratamiento_tipos')}}">Tipo de Tratamientos</a></li>
+                    </ul>
+            </li>
+            <li><a href="">Contacto</a></li>
+    </ul>
 </div>
 {% endblock %}

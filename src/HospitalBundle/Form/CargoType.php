@@ -15,7 +15,7 @@ class CargoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre'.'text',array('max_length'=>45))
+            ->add('nombre','text',array('max_length'=>45))
             ->add('descripcion','text',array('max_length'=>45))
         ;
     }

@@ -8,7 +8,7 @@ HospitalBundle\Entity\Factura:
             generator:
                 strategy: AUTO
     fields:
-        idPaciente:
+        idPersona:
             type: integer
         fechaGeneracion:
             type: datetime

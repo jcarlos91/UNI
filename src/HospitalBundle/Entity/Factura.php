@@ -15,13 +15,13 @@ class Factura
     private $id;
 
     /**
-     * @var \Hospital\HospitalBundle\Entity\Paciente
-     * @ORM\ManyToOne(targetEntity="Hospital\HospitalBundle\Entity\Paciente")
+     * @var \Hospital\HospitalBundle\Entity\Persona
+     * @ORM\ManyToOne(targetEntity="Hospital\HospitalBundle\Entity\Persona")
      * @RM\JoinColumns({
-     *      @ORM\JoinColumn(name="Paciente", referencedColumnName="id")    
+     *      @ORM\JoinColumn(name="Persona", referencedColumnName="id")    
      * })
      */
-    private $idPaciente;
+    private $idPersona;
 
     /**
      * @var \DateTime
@@ -40,26 +40,27 @@ class Factura
     }
 
     /**
-     * Set idPaciente
+     * Set idPersona
      *
-     * @param Hospital\HospitalBundle\Entity\Paciente
+     * @param Hospital\HospitalBundle\Entity\Persona
      * @return Factura
      */
-    public function setIdPaciente(\Hospital\HospitalBundle\Entity\Pacientes $idPaciente = null)
+    public function setIdPersona(\Hospital\HospitalBundle\Entity\Persona $idPersona = null)
     {
-        $this->idPaciente = $idPaciente;
+        $this->idPersona = $idPersona;
 
         return $this;
     }
 
     /**
-     * Get idPaciente
+     * Get idPersona
      *
-     * @return Hospital\HospitalBundle\Entity\Paciente
+     * @return Hospital\HospitalBundle\Entity\Persona
+     * 
      */
-    public function getIdPaciente()
+    public function getIdPersona()
     {
-        return $this->idPaciente;
+        return $this->idPersona;
     }
 
     /**

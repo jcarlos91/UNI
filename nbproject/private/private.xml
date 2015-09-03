@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/proyectoUIN/app/config/security.yml</file>
-            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Controller/UserController.php</file>
-            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Controller/SecurityController.php</file>
+            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Controller/DefaultController.php</file>
+            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/var/www/html/proyectoUIN/web/css/menu.css</file>
         </group>
     </open-files>
 </project-private>

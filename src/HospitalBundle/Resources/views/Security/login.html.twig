@@ -1,6 +1,8 @@
 {#src/HospitalBundle/Resources/views/Security/login.html.twig#}
 {% extends 'HospitalBundle::main.html.twig' %}
-
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/access.css')}}">
+{% endblock %}
 {% block title %}
     Login
 {% endblock %}

@@ -8,7 +8,7 @@ HospitalBundle\Entity\Tratamiento:
             generator:
                 strategy: AUTO
     fields:
-        idHistoriaClinica:
+        idPersona:
             type: integer
         idTipoTratamiento:
             type: integer

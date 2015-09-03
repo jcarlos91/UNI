@@ -15,13 +15,13 @@ class Tratamiento
     private $id;
 
       /**
-     * @var \Hospital\HospitalBundle\Entity\HistoriaClinica
-     * @ORM\OneToOne(targetEntity="Hospital\HospitalBundle\Entity\HistoriaClinica")
+     * @var \Hospital\HospitalBundle\Entity\Persona
+     * @ORM\OneToOne(targetEntity="Hospital\HospitalBundle\Entity\Persona")
      * @RM\JoinColumns({
-     *      @ORM\JoinColumn(name="HistoriaClinica", referencedColumnName="id")    
+     *      @ORM\JoinColumn(name="Persona", referencedColumnName="id")    
      * })
      */
-    private $idHistoriaClinica;
+    private $idPersona;
 
     /**
      * @var \Hospital\HospitalBundle\Entity\TipoTratamiento
@@ -64,26 +64,26 @@ class Tratamiento
     }
 
     /**
-     * Set idHistoriaClinica
+     * Set idPersona
      *
-     * @param Hospital\HospitalBundle\Entity\HistoriaClinica
+     * @param Hospital\HospitalBundle\Entity\Persona
      * @return Tratamiento
      */
-    public function setIdHistoriaClinica(\Hospital\HospitalBundle\Entity\HistoriaClinica $idHistoriaClinica = null)
+    public function setIdHistoriaClinica(\Hospital\HospitalBundle\Entity\Persona $idPersona = null)
     {
-        $this->idHistoriaClinica = $idHistoriaClinica;
+        $this->idHistoriaClinica = $idPersona;
 
         return $this;
     }
 
     /**
-     * Get idHistoriaClinica
+     * Get idPersona
      *
-     * @return Hospital\HospitalBundle\Entity\HistoriaClinica 
+     * @return Hospital\HospitalBundle\Entity\Persona
      */
-    public function getIdHistoriaClinica()
+    public function getIdPersona()
     {
-        return $this->idHistoriaClinica;
+        return $this->idPersona;
     }
 
     /**

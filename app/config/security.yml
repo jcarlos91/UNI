@@ -23,7 +23,7 @@ security:
     providers:
         chain_provider:
             chain:
-                providers: [in_memory, user_db]
+                providers: [in_memory, user_db, administrators]
         in_memory:
             memory:
                 users:
@@ -32,6 +32,10 @@ security:
                     
         user_db:
             entity: { class: HospitalBundle:Usuario, property: username}
+
+        administrators:
+            entity: { class: HospitalBundle:Usuario }
+
 
     # the main part of the security, where you can set up firewalls
     # for specific sections of your app

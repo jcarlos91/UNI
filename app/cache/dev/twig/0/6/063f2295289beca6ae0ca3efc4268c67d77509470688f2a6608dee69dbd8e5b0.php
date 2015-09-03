@@ -39,17 +39,13 @@ class __TwigTemplate_063f2295289beca6ae0ca3efc4268c67d77509470688f2a6608dee69dbd
         // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
         echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/access.css"), "html", null, true);
-        echo "\">
 ";
     }
 
-    // line 10
+    // line 9
     public function block_header($context, array $blocks = array())
     {
-        // line 11
+        // line 10
         echo "\t";
         $this->displayBlock('title', $context, $blocks);
     }
@@ -59,25 +55,25 @@ class __TwigTemplate_063f2295289beca6ae0ca3efc4268c67d77509470688f2a6608dee69dbd
         echo " ";
     }
 
-    // line 14
+    // line 13
     public function block_body($context, array $blocks = array())
     {
-        // line 15
+        // line 14
         echo "\t<section id=\"section\"> 
 \t\t<article id=\"contenido\">
 \t\t\t";
-        // line 17
+        // line 16
         $this->displayBlock('contenido', $context, $blocks);
-        // line 20
+        // line 19
         echo "\t\t</article>\t
 \t</section> 
 ";
     }
 
-    // line 17
+    // line 16
     public function block_contenido($context, array $blocks = array())
     {
-        // line 18
+        // line 17
         echo "\t\t\t\tMi Contenido
 \t\t\t";
     }
@@ -94,6 +90,6 @@ class __TwigTemplate_063f2295289beca6ae0ca3efc4268c67d77509470688f2a6608dee69dbd
 
     public function getDebugInfo()
     {
-        return array (  81 => 18,  78 => 17,  72 => 20,  70 => 17,  66 => 15,  63 => 14,  53 => 11,  50 => 10,  44 => 6,  40 => 5,  35 => 4,  32 => 3,  11 => 1,);
+        return array (  77 => 17,  74 => 16,  68 => 19,  66 => 16,  62 => 14,  59 => 13,  49 => 10,  46 => 9,  40 => 5,  35 => 4,  32 => 3,  11 => 1,);
     }
 }

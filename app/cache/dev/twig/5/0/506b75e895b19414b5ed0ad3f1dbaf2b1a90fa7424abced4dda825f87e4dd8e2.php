@@ -10,6 +10,7 @@ class __TwigTemplate_506b75e895b19414b5ed0ad3f1dbaf2b1a90fa7424abced4dda825f87e4
         // line 1
         $this->parent = $this->loadTemplate("HospitalBundle::main.html.twig", "HospitalBundle:Default:index.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'contenido' => array($this, 'block_contenido'),
         );
     }
@@ -25,37 +26,60 @@ class __TwigTemplate_506b75e895b19414b5ed0ad3f1dbaf2b1a90fa7424abced4dda825f87e4
     }
 
     // line 3
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Inicio";
+    }
+
+    // line 4
     public function block_contenido($context, array $blocks = array())
     {
-        // line 4
+        // line 5
         echo "<div id=\"header\">
-        <ul class=\"nav\">
-                <li><a href=\"\">Inicio</a></li>
-                <li><a href=\"\">Servicios</a>
-                        <ul>
-                                <li><a href=\"\">Submenu1</a></li>
-                                <li><a href=\"\">Submenu2</a></li>
-                                <li><a href=\"\">Submenu3</a></li>
-                                <li><a href=\"\">Submenu4</a>
-                                        <ul>
-                                                <li><a href=\"\">Submenu1</a></li>
-                                                <li><a href=\"\">Submenu2</a></li>
-                                                <li><a href=\"\">Submenu3</a></li>
-                                                <li><a href=\"\">Submenu4</a></li>
-                                        </ul>
-                                </li>
-                        </ul>
-                </li>
-                <li><a href=\"\">Acerca de</a>
-                        <ul>
-                                <li><a href=\"\">Submenu1</a></li>
-                                <li><a href=\"\">Submenu2</a></li>
-                                <li><a href=\"\">Submenu3</a></li>
-                                <li><a href=\"\">Submenu4</a></li>
-                        </ul>
-                </li>
-                <li><a href=\"\">Contacto</a></li>
-        </ul>
+    <ul class=\"nav\">
+            <li><a href=\"\">Inicio</a></li>
+            <li><a href=\"\">Pacientes</a>
+                    <ul>
+                            <li><a href=\"\">Alta</a></li>
+                            <!--li><a href=\"\">Submenu2</a></li>
+                            <li><a href=\"\">Submenu3</a></li>
+                            <li><a href=\"\">Submenu4</a>
+                                    <ul>
+                                            <li><a href=\"\">Submenu1</a></li>
+                                            <li><a href=\"\">Submenu2</a></li>
+                                            <li><a href=\"\">Submenu3</a></li>
+                                            <li><a href=\"\">Submenu4</a></li>
+                                    </ul>
+                            </li-->
+                    </ul>
+            </li>
+            <li><a href=\"\">Empleados</a>
+                <ul>
+                    <li><a href=\"\">Nuevo</a></li>
+                </ul>
+            </li>
+            <li><a href=\"\">Catalogos</a>
+                    <ul>
+                            <li><a href=\"";
+        // line 30
+        echo $this->env->getExtension('routing')->getUrl("hospital_cargo");
+        echo "\">Cargos</a></li>
+                            <li><a href=\"";
+        // line 31
+        echo $this->env->getExtension('routing')->getUrl("hospital_tipoEmpleado_tipos");
+        echo "\">Tipo Empleado</a></li>
+                            <li><a href=\"";
+        // line 32
+        echo $this->env->getExtension('routing')->getUrl("hospital_formas_pago");
+        echo "\">Formas de Pago</a></li>
+                            <li><a href=\"";
+        // line 33
+        echo $this->env->getExtension('routing')->getUrl("hospital_TipoTratamiento_tipos");
+        echo "\">Tipo de Tratamientos</a></li>
+                    </ul>
+            </li>
+            <li><a href=\"\">Contacto</a></li>
+    </ul>
 </div>
 ";
     }
@@ -72,6 +96,6 @@ class __TwigTemplate_506b75e895b19414b5ed0ad3f1dbaf2b1a90fa7424abced4dda825f87e4
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,  11 => 1,);
+        return array (  77 => 33,  73 => 32,  69 => 31,  65 => 30,  38 => 5,  35 => 4,  29 => 3,  11 => 1,);
     }
 }

@@ -8,7 +8,7 @@ HospitalBundle\Entity\Examen:
             generator:
                 strategy: AUTO
     fields:
-        idHistorialClinica:
+        idPersona:
             type: integer
         fechaSolicitud:
             type: datetime

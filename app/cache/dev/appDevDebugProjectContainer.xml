@@ -465,6 +465,7 @@
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
+    <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
     <parameter key="assetic.twig_extension.functions" type="collection"/>
     <parameter key="assetic.controller.class">Symfony\Bundle\AsseticBundle\Controller\AsseticController</parameter>
@@ -1799,7 +1800,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>55e628d23406b3.51386496</argument>
+            <argument>55e77db3b95ec0.53643785</argument>
           </service>
         </argument>
       </argument>
@@ -1893,6 +1894,7 @@
       <argument type="collection">
         <argument type="service" id="security.user.provider.concrete.in_memory"/>
         <argument type="service" id="security.user.provider.concrete.user_db"/>
+        <argument type="service" id="security.user.provider.concrete.administrators"/>
       </argument>
     </service>
     <service id="security.user.provider.concrete.in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false">
@@ -1923,6 +1925,12 @@
       <argument type="service" id="doctrine"/>
       <argument>HospitalBundle:Usuario</argument>
       <argument>username</argument>
+      <argument>null</argument>
+    </service>
+    <service id="security.user.provider.concrete.administrators" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
+      <argument type="service" id="doctrine"/>
+      <argument>HospitalBundle:Usuario</argument>
+      <argument>null</argument>
       <argument>null</argument>
     </service>
     <service id="security.firewall.map.context.secured_area" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
@@ -1961,6 +1969,7 @@
               <argument type="service" id="security.user.provider.concrete.chain_provider"/>
               <argument type="service" id="security.user.provider.concrete.in_memory"/>
               <argument type="service" id="security.user.provider.concrete.user_db"/>
+              <argument type="service" id="security.user.provider.concrete.administrators"/>
             </argument>
             <argument>secured_area</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2046,7 +2055,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>55e628d23406b3.51386496</argument>
+            <argument>55e77db3b95ec0.53643785</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2409,15 +2418,15 @@
     <service id="assetic.filter.cssrewrite" class="Assetic\Filter\CssRewriteFilter">
       <tag name="assetic.filter" alias="cssrewrite"/>
     </service>
-    <service id="assetic.controller" class="Symfony\Bundle\AsseticBundle\Controller\AsseticController" scope="prototype">
-      <argument type="service" id="request"/>
+    <service id="assetic.controller" class="Symfony\Bundle\AsseticBundle\Controller\AsseticController">
       <argument type="service" id="assetic.asset_manager"/>
-      <argument type="service" id="assetic.cache"/>
+      <argument type="service">
+        <service class="Assetic\Cache\FilesystemCache" public="false">
+          <argument>/var/www/html/proyectoUIN/app/cache/dev/assetic/assets</argument>
+        </service>
+      </argument>
       <argument>false</argument>
       <argument type="service" id="profiler" on-invalid="null"/>
-    </service>
-    <service id="assetic.cache" class="Assetic\Cache\FilesystemCache" public="false">
-      <argument>/var/www/html/proyectoUIN/app/cache/dev/assetic/assets</argument>
     </service>
     <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
