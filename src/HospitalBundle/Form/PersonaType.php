@@ -15,7 +15,6 @@ class PersonaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('cedula','text',array('max_length'=>12))
             ->add('nombre','text',array('max_length'=>45))
             ->add('apellidos','text',array('max_length'=>45))
             ->add('fechaNacimiento','date',array('widget'=>'single_text'))

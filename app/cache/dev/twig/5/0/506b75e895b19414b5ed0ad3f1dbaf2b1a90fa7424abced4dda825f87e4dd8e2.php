@@ -40,17 +40,26 @@ class __TwigTemplate_506b75e895b19414b5ed0ad3f1dbaf2b1a90fa7424abced4dda825f87e4
             <li><a href=\"\">Inicio</a></li>
             <li><a href=\"\">Pacientes</a>
                     <ul>
-                            <li><a href=\"\">Alta</a></li>
-                            <!--li><a href=\"\">Submenu2</a></li>
-                            <li><a href=\"\">Submenu3</a></li>
-                            <li><a href=\"\">Submenu4</a>
-                                    <ul>
-                                            <li><a href=\"\">Submenu1</a></li>
-                                            <li><a href=\"\">Submenu2</a></li>
-                                            <li><a href=\"\">Submenu3</a></li>
-                                            <li><a href=\"\">Submenu4</a></li>
-                                    </ul>
+                            <li><a href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getUrl("hospital_paciente_nuevo");
+        echo "\">Alta</a></li>
+                            <li><a href=\"\">Tratamiento</a>
+                                <ul>
+                                    <li><a href=\"";
+        // line 13
+        echo $this->env->getExtension('routing')->getUrl("hospital_paciente_buscar");
+        echo "\">Nuevo</a></li>
+                                    <li><a href=\"\">Submenu2</a></li>
+                                    <li><a href=\"\">Submenu3</a></li>
+                                    <li><a href=\"\">Submenu4</a></li>
+                                </ul>
+                            </li>
+                            <!--li><a href=\"\">Submenu4</a>
+                                    
                             </li-->
+                            <!--li><a href=\"\">Submenu3</a></li-->
+                            
                     </ul>
             </li>
             <li><a href=\"\">Empleados</a>
@@ -61,19 +70,19 @@ class __TwigTemplate_506b75e895b19414b5ed0ad3f1dbaf2b1a90fa7424abced4dda825f87e4
             <li><a href=\"\">Catalogos</a>
                     <ul>
                             <li><a href=\"";
-        // line 30
+        // line 33
         echo $this->env->getExtension('routing')->getUrl("hospital_cargo");
         echo "\">Cargos</a></li>
                             <li><a href=\"";
-        // line 31
+        // line 34
         echo $this->env->getExtension('routing')->getUrl("hospital_tipoEmpleado_tipos");
         echo "\">Tipo Empleado</a></li>
                             <li><a href=\"";
-        // line 32
+        // line 35
         echo $this->env->getExtension('routing')->getUrl("hospital_formas_pago");
         echo "\">Formas de Pago</a></li>
                             <li><a href=\"";
-        // line 33
+        // line 36
         echo $this->env->getExtension('routing')->getUrl("hospital_TipoTratamiento_tipos");
         echo "\">Tipo de Tratamientos</a></li>
                     </ul>
@@ -96,6 +105,6 @@ class __TwigTemplate_506b75e895b19414b5ed0ad3f1dbaf2b1a90fa7424abced4dda825f87e4
 
     public function getDebugInfo()
     {
-        return array (  77 => 33,  73 => 32,  69 => 31,  65 => 30,  38 => 5,  35 => 4,  29 => 3,  11 => 1,);
+        return array (  86 => 36,  82 => 35,  78 => 34,  74 => 33,  51 => 13,  45 => 10,  38 => 5,  35 => 4,  29 => 3,  11 => 1,);
     }
 }

@@ -8,26 +8,26 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EmpleadoController extends Controller{
 
-	public function nuevoAction(Request $request){
-		$tipoEmpleado = new TipoEmpleado();
-		$form = $this->createForm(new TipoEmpleadoType, $tipoEmpleado);
-		$form->handleRequest($request);
-    	if($form->isValid() && $form->isSubmitted()){
+    public function nuevoAction(Request $request){
+        $tipoEmpleado = new TipoEmpleado();
+        $form = $this->createForm(new TipoEmpleadoType, $tipoEmpleado);
+        $form->handleRequest($request);
+        if($form->isValid() && $form->isSubmitted()){
     		try {
-				$this->getDoctrine()->getManager()->persist($tipoEmpleado);
-    			$this->getDoctrine()->getManager()->flush();
-    			return $this->redirect($this->generateURL('hospital_homepage'));
+                    $this->getDoctrine()->getManager()->persist($tipoEmpleado);
+                    $this->getDoctrine()->getManager()->flush();
+                    return $this->redirect($this->generateURL('hospital_homepage'));
     		} catch (\Exception $e) {
-    			throw new \Exception("Error Processing Request".$e->getMessage());    			
+                    throw new \Exception("Error Processing Request".$e->getMessage());    			
     		}
     	}
     	return $this->render("HospitalBundle:TipoEmpleado:nuevo.html.twig",array(
     		'form'=>$form->createView(),
     		)
     	);
-	}
+    }
 
-	public function editarAction(Request $request, TipoEmpleado $tipoEmpleado){
+    public function editarAction(Request $request, TipoEmpleado $tipoEmpleado){
         $form = $this->createForm(new TipoEmpleadoType(), $tipoEmpleado);
         $form->handleRequest($request);
 

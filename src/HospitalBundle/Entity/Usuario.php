@@ -4,6 +4,7 @@ namespace HospitalBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Usuario
@@ -23,7 +24,7 @@ class Usuario implements UserInterface, \Serializable
     /**
      * @var string
      */
-    private $salt;
+    private $salt; 
 
     /**
      * @var string
@@ -41,7 +42,15 @@ class Usuario implements UserInterface, \Serializable
      * @var boolean
      */
     private $isActive;
-
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Hospital\HospitalBundle\Entity\Role", mappedBy="role")
+     */
+    private $role;
+    
+    
 
     /**
      * Get id
@@ -203,6 +212,43 @@ class Usuario implements UserInterface, \Serializable
     public function __construct(){ 
         $this->isActive = true; 
         $this->salt = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36); 
+    }
+    
+    public function __sleep(){
+        return array('id');
+    }
+    
+     /**
+     * Add role
+     *
+     * @param \Hostital\HospitalBundle\Entity\Role $role
+     * @return Person
+     */
+    public function addRole(\Hostital\HospitalBundle\Entity\Role $role)
+    {
+        $this->role[] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Remove role
+     *
+     * @param \Hostital\HospitalBundle\Entity\Role $role
+     */
+    public function removeRole(\Hostital\HospitalBundle\Entity\Role $role)
+    {
+        $this->role->removeElement($role);
+    }
+
+    /**
+     * Get role
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRole()
+    {
+        return $this->role->toArray();
     }
 
 }

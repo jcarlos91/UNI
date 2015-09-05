@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Controller/DefaultController.php</file>
-            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/var/www/html/proyectoUIN/web/css/menu.css</file>
+            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Controller/PacienteController.php</file>
+            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Controller/Empleado.php</file>
+            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Resources/config/routing.yml</file>
+            <file>file:/var/www/html/proyectoUIN/src/HospitalBundle/Form/EmpleadoType.php</file>
         </group>
     </open-files>
 </project-private>

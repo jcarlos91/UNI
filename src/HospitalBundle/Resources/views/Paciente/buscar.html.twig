@@ -1,0 +1,9 @@
+{% extends 'HospitalBundle::main.html.twig' %}
+{% block title %}Search{% endblock %}
+{% block contenido %}
+    <form action="{{path('hospital_paciente_busqueda')}}" method="POST">
+        <label>Ingresa el nombre del paciente: </label>
+        <input type="search" name="patientName" id="patientName">
+        <input type="submit">
+    </form>
+{%  endblock%}

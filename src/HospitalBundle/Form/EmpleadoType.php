@@ -15,28 +15,36 @@ class EmpleadoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idPersona')
+            ->add('nombre','text',array('max_length'=> 50))
+            ->add('apellido','text',array('max_length' => 50))
+            ->add('fechaNacimiento','date',array('widget'=>'single_text'))
+            ->add('telefono','text',array('max_length'=>10))
+            ->add('direccion','text',array('max_length'=>45))
             ->add('idCargo','entity',array(
-                'class'=>'Hospital\HospitalBundle\Entity\Cargo',
+                'class'=>'HospitalBundle\Entity\Cargo',
                 'required' => true,
                 'placeholder' => 'Selecciona un Cargo',
                 'property' => 'nombre')
             )
             ->add('idTipoEmpleado','entity',array(
-                'class'=>'Hospital\HospitalBundle\Entity\TipoEmpleado',
+                'class'=>'HospitalBundle\Entity\TipoEmpleado',
                 'required'=>true,
                 'placeholder'=>'Seleciona un Tipo de Empleado',
                 'property' => 'nombre')
             )
             ->add('idDependencia','entity',array(
-                'class'=>'Hospital\HospitalBundle\Entity\Dependencia',
+                'class'=>'HospitalBundle\Entity\Dependencia',
                 'required'=>true,
                 'placeholder'=> 'Seleciones una Dependencia',
                 'property'=>'nombre')
             )
-            ->add('idUsuario')
+            ->add('username','text',array('max_length' => 15))
+            ->add('password','password',array(
+                  'required' => true,
+                  'max_length' => 8)
+                )
         ;
-    }
+    }   
     
     /**
      * @param OptionsResolverInterface $resolver

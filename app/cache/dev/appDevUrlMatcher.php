@@ -265,9 +265,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // hospital_paciente_nuevo
-        if ($pathinfo === '/paciente/nuevo') {
-            return array (  '_controller' => 'HospitalBundle\\Controller\\PacienteController::nuevoAction',  '_route' => 'hospital_paciente_nuevo',);
+        if (0 === strpos($pathinfo, '/paciente')) {
+            // hospital_paciente_nuevo
+            if ($pathinfo === '/paciente/nuevo') {
+                return array (  '_controller' => 'HospitalBundle\\Controller\\PacienteController::nuevoAction',  '_route' => 'hospital_paciente_nuevo',);
+            }
+
+            // hospital_paciente_editar
+            if (preg_match('#^/paciente/(?P<id>[^/]++)/tratamiento$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'hospital_paciente_editar')), array (  '_controller' => 'HospitalBundle\\Controller\\PacienteController::editarAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/paciente/bus')) {
+                // hospital_paciente_buscar
+                if ($pathinfo === '/paciente/buscar') {
+                    return array (  '_controller' => 'HospitalBundle\\Controller\\PacienteController::buscarAction',  '_route' => 'hospital_paciente_buscar',);
+                }
+
+                // hospital_paciente_busqueda
+                if ($pathinfo === '/paciente/busqueda') {
+                    return array (  '_controller' => 'HospitalBundle\\Controller\\PacienteController::busquedaAction',  '_route' => 'hospital_paciente_busqueda',);
+                }
+
+            }
+
+            // hospital_paciente_tratamiento
+            if ($pathinfo === '/paciente/nuevo/tratamiento') {
+                return array (  '_controller' => 'HospitalBundle\\Controller\\PacienteController::tratamientoAction',  '_route' => 'hospital_paciente_tratamiento',);
+            }
+
         }
 
         // homepage

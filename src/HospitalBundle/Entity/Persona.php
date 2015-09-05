@@ -17,11 +17,6 @@ class Persona
     /**
      * @var string
      */
-    private $cedula;
-
-    /**
-     * @var string
-     */
     private $nombre;
 
     /**
@@ -53,29 +48,6 @@ class Persona
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set cedula
-     *
-     * @param string $cedula
-     * @return Persona
-     */
-    public function setCedula($cedula)
-    {
-        $this->cedula = $cedula;
-
-        return $this;
-    }
-
-    /**
-     * Get cedula
-     *
-     * @return string 
-     */
-    public function getCedula()
-    {
-        return $this->cedula;
     }
 
     /**

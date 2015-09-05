@@ -15,8 +15,12 @@ class TratamientoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idHistoriaClinica')
-            ->add('idTipoTratamiento')
+            ->add('IdTipoTratamiento','entity',array(
+               'class'=>'HospitalBundle\Entity\TipoTratamiento',
+                'required'=>true,
+                'placeholder'=>'Seleciona un Tipo de Tratamiento',
+                'property' => 'nombre')
+            )
             ->add('fechaSolicitud','date',array('widget'=>'single_text'))
             ->add('fechaInicio','date',array('widget'=>'single_text'))
             ->add('fechaFinalizacion','date',array('widget'=>'single_text'))

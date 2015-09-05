@@ -66,12 +66,12 @@ class Tratamiento
     /**
      * Set idPersona
      *
-     * @param Hospital\HospitalBundle\Entity\Persona
+     * @param \HospitalBundle\Entity\Persona
      * @return Tratamiento
      */
-    public function setIdHistoriaClinica(\Hospital\HospitalBundle\Entity\Persona $idPersona = null)
+    public function setIdPersona(\HospitalBundle\Entity\Persona $idPersona = null)
     {
-        $this->idHistoriaClinica = $idPersona;
+        $this->idPersona = $idPersona;
 
         return $this;
     }
@@ -79,7 +79,7 @@ class Tratamiento
     /**
      * Get idPersona
      *
-     * @return Hospital\HospitalBundle\Entity\Persona
+     * @return \HospitalBundle\Entity\Persona
      */
     public function getIdPersona()
     {
@@ -89,10 +89,10 @@ class Tratamiento
     /**
      * Set idTipoTratamiento
      *
-     * @param Hospital\HospitalBundle\Entity\TipoTratamiento
+     * @param HospitalBundle\Entity\TipoTratamiento
      * @return Tratamiento
      */
-    public function setIdTipoTratamiento(\Hospital\HospitalBundle\Entity\TipoTratamiento $idTipoTratamiento = null)
+    public function setIdTipoTratamiento(\HospitalBundle\Entity\TipoTratamiento $idTipoTratamiento = null)
     {
         $this->idTipoTratamiento = $idTipoTratamiento;
 

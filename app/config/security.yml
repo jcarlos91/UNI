@@ -45,7 +45,9 @@ security:
             anonymous:  ~
             form_login:
                 login_path:  login
+                use_referer: true
                 check_path:  login_check
+                
     # with these settings you can restrict or allow access for different parts
     # of your application based on roles, ip, host or methods
     # http://symfony.com/doc/current/cookbook/security/access_control.html

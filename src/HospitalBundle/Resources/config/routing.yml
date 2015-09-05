@@ -76,7 +76,19 @@ hospital_formas_pago_editar:
 hospital_formas_pago_eliminar:
     path:    /formas/pago/{id}/eliminar
     defaults: { _controller: HospitalBundle:FormasPago:eliminar }
-#Personas
+#Pacientes
 hospital_paciente_nuevo:
     path:     /paciente/nuevo
     defaults: { _controller: HospitalBundle:Paciente:nuevo }
+hospital_paciente_editar:
+    path:     /paciente/{id}/tratamiento
+    defaults: { _controller: HospitalBundle:Paciente:editar }
+hospital_paciente_buscar:
+    path:    /paciente/buscar
+    defaults: { _controller: HospitalBundle:Paciente:buscar }
+hospital_paciente_busqueda:
+    path:    /paciente/busqueda
+    defaults: { _controller: HospitalBundle:Paciente:busqueda }
+hospital_paciente_tratamiento:
+    path:    /paciente/nuevo/tratamiento
+    defaults: { _controller: HospitalBundle:Paciente:tratamiento }
